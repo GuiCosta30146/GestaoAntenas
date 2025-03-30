@@ -1,0 +1,82 @@
+\doxysection{ficheiros.\+h File Reference}
+\hypertarget{ficheiros_8h}{}\label{ficheiros_8h}\index{ficheiros.h@{ficheiros.h}}
+
+
+Cabeçalho que contém funções relacionadas à manipulação de ficheiros.  
+
+
+{\ttfamily \#include "{}estruturas.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ficheiros_8h_ab9bdc846ab2b15862fe6dfab97a1a27b}{carregar\+Antenas\+Ficheiro}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, char \texorpdfstring{$\ast$}{*}Nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Carrega as antenas de um ficheiro de texto e as armazena numa lista ligada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cabeçalho que contém funções relacionadas à manipulação de ficheiros. 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Araújo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ficheiros_8h_ab9bdc846ab2b15862fe6dfab97a1a27b}\index{ficheiros.h@{ficheiros.h}!carregarAntenasFicheiro@{carregarAntenasFicheiro}}
+\index{carregarAntenasFicheiro@{carregarAntenasFicheiro}!ficheiros.h@{ficheiros.h}}
+\doxysubsubsection{\texorpdfstring{carregarAntenasFicheiro()}{carregarAntenasFicheiro()}}
+{\footnotesize\ttfamily \label{ficheiros_8h_ab9bdc846ab2b15862fe6dfab97a1a27b} 
+void carregar\+Antenas\+Ficheiro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{Nome\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Carrega as antenas de um ficheiro de texto e as armazena numa lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista onde as antenas serão armazenadas. \\
+\hline
+{\em Nome\+Ficheiro} & Nome do ficheiro que contem as antenas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+O ficheiro deve conter uma matriz de caracteres, onde as antenas são representadas por diferentes símbolos.
+\end{DoxyNote}
+Carrega as antenas de um ficheiro de texto e as armazena numa lista ligada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para o ponteiro da lista onde as antenas serão armazenadas. \\
+\hline
+{\em Nome\+Ficheiro} & Nome do ficheiro que contém a matriz de antenas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+O ficheiro deve conter uma matriz de caracteres, onde cada antena é representada por um símbolo diferente.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Se o ficheiro não for encontrado ou não puder ser aberto, a função exibe uma mensagem de erro e retorna. 
+\end{DoxyWarning}
+\texorpdfstring{$<$}{<} Abre o ficheiro em modo de leitura
+
+\texorpdfstring{$<$}{<} Sai da função caso ocorra erro ao abrir o ficheiro
+
+\texorpdfstring{$<$}{<} Armazenar cada linha lida do ficheiro
+
+\texorpdfstring{$<$}{<} Contador para a linha atual do ficheiro
+
+Lê o ficheiro linha por linha e processa os caracteres.
+
+
+\begin{DoxyItemize}
+\item Percorre cada caracter da linha.
+\item Se for diferente de \textquotesingle{}.\textquotesingle{}, cria uma antena e a insere na lista.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} \doxylink{struct_antena}{Antena} detetada
+
+\texorpdfstring{$<$}{<} Cria uma nova antena
+
+\texorpdfstring{$<$}{<} Insere a antena na lista
+
+\texorpdfstring{$<$}{<} Fecha o ficheiro após a leitura
