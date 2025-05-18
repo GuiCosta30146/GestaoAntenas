@@ -4,6 +4,12 @@
 #include "estruturas.h"
 
 /**
+ * @file listas.h
+ * @brief Cabeçalho que contém funções para manipulação da lista ligada de antenas.
+ * @author Guilherme Araújo
+ */
+
+/**
  * @brief Cria uma nova antena com os dados fornecidos.
  * 
  * @param freq Frequência da antena.
@@ -21,6 +27,7 @@ Antena* CriarAntena(char* freq, int l, int c) {
     }
     return aux;
 }
+
 
 /**
  * @brief Insere uma antena na lista de forma ordenada.
@@ -98,6 +105,8 @@ Antena* RemoverAntena(Antena* ant, int l, int c) {
  * 
  * @param lista Ponteiro para a lista de antenas.
  */
+
+ /*
 void imprimirLista(Antena* lista) {
     printf("\nLista de Antenas:\n");
     printf("+----+------+------+------+\n");
@@ -111,18 +120,22 @@ void imprimirLista(Antena* lista) {
         i++;
     }
     printf("+----+------+------+------+\n");
-}
+}*/
+
 
 /**
  * @brief Liberta a memória da lista de antenas.
  * 
  * @param lista Ponteiro para a lista de antenas.
  */
-void libertarLista(Antena* lista) {
+
+Antena* libertarLista(Antena* lista) {
     Antena* aux;
     while (lista) {
         aux = lista;
         lista = lista->prox;
         free(aux);
     }
+    return NULL;  //A lista agora está vazia
 }
+

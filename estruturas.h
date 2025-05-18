@@ -1,5 +1,8 @@
 #ifndef ESTRUTURAS_H
 #define ESTRUTURAS_H
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
 
 /**
  * @file estruturas.h
@@ -30,5 +33,32 @@ typedef struct AntenaFile
     char frequencia;//frequencia da antena (a,A,O).
     int linha, coluna;// posicao da antena.
 }AntenaFile;
+
+typedef struct Nefasto {
+    int linha;
+    int coluna;
+    struct Nefasto* proxima;
+} Nefasto;
+
+////////////////////////////////////////////////////////
+            //Estruturas para os Grafoos
+///////////////////////////////////////////////////////
+
+typedef struct Vertice {
+    Antena ant; //informaçoes da antena        
+    struct Adjacencia* adj; 
+    int visitado;//toma valor de 1 se ja for visitado    
+} Vertice;
+
+typedef struct Adjacencia{
+    int destino;
+    struct Adjacencia* prox;
+}Adjacencia;
+
+typedef struct GR{
+    int nVertices;
+    int capacidade;//numero maximo do vetor de vertices
+    Vertice* vertices;
+}GR;
 
 #endif

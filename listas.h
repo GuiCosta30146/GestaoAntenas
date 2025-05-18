@@ -41,18 +41,20 @@ Antena* InsereAntenaOrdenado(Antena* inicio, Antena* novo);
  */
 Antena* RemoverAntena(Antena* ant, int l, int c);
 
+
 /**
  * @brief Imprime todas as antenas na lista.
  * 
  * @param lista Ponteiro para a lista de antenas.
  */
-void imprimirLista(Antena* lista);
+/*
+void imprimirLista(Antena* lista);*/
 
 /**
  * @brief Liberta a memória 
  * 
  * @param lista Ponteiro para a lista de antenas.
  */
-void libertarLista(Antena* lista);
+Antena* libertarLista(Antena* lista);
 
 #endif

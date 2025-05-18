@@ -11,12 +11,10 @@
 /**
  * @brief Carrega as antenas de um ficheiro de texto e as armazena numa lista ligada.
  * 
- * @param lista Lista onde as antenas serão armazenadas.
  * @param NomeFicheiro Nome do ficheiro que contem as antenas.
  * 
  * @note O ficheiro deve conter uma matriz de caracteres, onde as antenas são representadas por diferentes símbolos.
  */
-
-void carregarAntenasFicheiro(Antena** lista,char* NomeFicheiro);
+Antena* carregarAntenasFicheiro(const char* NomeFicheiro);
 
 #endif

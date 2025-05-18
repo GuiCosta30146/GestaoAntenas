@@ -2,6 +2,20 @@
 #include "listas.h"
 #include "ficheiros.h"
 
+void imprimirLista(Antena* lista) {
+    printf("\nLista de Antenas:\n");
+    printf("+----+------+------+------+\n");
+    printf("| #  | Freq | Lin  | Col  |\n");
+    printf("+----+------+------+------+\n");
+
+    int i = 1;
+    while (lista) {
+        printf("| %2d |  %c   |  %2d  |  %2d  |\n", i, lista->frequencia, lista->linha, lista->coluna);
+        lista = lista->prox;
+        i++;
+    }
+    printf("+----+------+------+------+\n");
+}
 
 int main()
 {
@@ -9,7 +23,13 @@ int main()
     char nomeFicheiro[] = "mapaantenas.txt";  // Nome do ficheiro
 
     printf("A Carregar antenas do ficheiro '%s'...\n", nomeFicheiro);
-    carregarAntenasFicheiro(&lista, nomeFicheiro);  // Chama a função para carregar as antenas
+    Antena* lista = carregarAntenasFicheiro("mapaantenas.txt");
+    if (lista == NULL) {
+        printf("Erro ao carregar o ficheiro.\n");
+    } else {
+        imprimirLista(lista);
+    }
+
 
     if (lista == NULL) {
         printf("Nenhuma antena foi carregada.\n");
